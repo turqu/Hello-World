@@ -1,1 +1,1 @@
-Hello, World! I'm new to Git.
+Hi everyone! It's my page according to the exercise from edX's course Microsoft: DEV284x / Designing a Technical Solution. 
