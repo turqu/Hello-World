@@ -98,6 +98,8 @@ header ul { display: flex; }
     width: 20%;
     text-align: center;
 }
+
+#search-again { text-align: center; }
 /* Footer style */
 
 footer {
