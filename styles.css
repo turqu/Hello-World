@@ -18,6 +18,14 @@ h1 {
     margin: 0;
     padding-top: 30px;
 }
+
+h2 {
+    text-align: center;
+    background-color: lightgray;
+    margin: 0;
+    padding: 30px;
+    font-size: 2em;
+}
   
 p {
     font-size: 2em;
@@ -29,7 +37,7 @@ img {
     padding: 30px;
  }
 
-/* Header style */
+/* Header/Navigation style */
   
 header, #logotype {
     background-color: whitesmoke;
@@ -52,15 +60,18 @@ header, #logotype {
 
 header ul { display: flex; }
 
-/* Sections styles */
-  
-#logotype {
+/***** Sections styles *****/
+
+/* Main/Headline area - index.html */  
+
+#headline {
     clear: both;
     padding: 50px;
     background-color: lightgray;
 }
+/* Search section - search.html */
   
-#search, #recipies {
+#search-area, #recipies {
     display: flex;
     padding: 0 60px; 
 }
@@ -79,7 +90,14 @@ header ul { display: flex; }
     background-color: grey;
     height: 280px;
 }
-  
+
+#search-again h3 {
+    margin: 0;
+    padding: 30px;
+    background-color: grey;
+}
+ /* Results section - result.html */ 
+
 #result {
     padding: 10px;
     background-color: lightgray;
@@ -100,12 +118,14 @@ header ul { display: flex; }
 }
 
 #search-again { text-align: center; }
+    
 /* Footer style */
 
 footer {
     font-size: 0.5em;
     display: flex;
-    background-color: lightgrey;
+    background-color: gainsboro;
+    justify-content: space-around;
 }
 
 
