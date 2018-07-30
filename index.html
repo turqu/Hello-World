@@ -2,61 +2,91 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Excercise</title>
+        <title>Exercise</title>
         <link href="styles.css" type="text/css" rel="stylesheet">
     </head>
     <body>
         <header>
-        <nav id="logo-nav">
-            <div id="logo">LOGO</div>
-            <div>
-            <ul>
-                <li><a href="">BUTTON</a></li>
-                <li><a href="">BUTTON</a></li>
-                <li><a href="">BUTTON</a></li>
-                <li><a href="">BUTTON</a></li>
-            </ul>
-            </div>
-        </nav>
-        </header>
-        
-        <section id="logotype">
-        <h1>LOGOTYPE</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <nav id="logo-nav">
+                <div id="logo">LOGO</div>
+                <div id="logo-list">
+                    <ul>
+                        <li><a href="">BUTTON</a></li>
+                        <li><a href="">BUTTON</a></li>
+                        <li><a href="">BUTTON</a></li>
+                        <li><a href="">BUTTON</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>  
+        <section id="logotype"> <!--- Main section starts-->
+            <h1>LOGOTYPE</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
         </section>
-        
-        <section id="search">
-        <div id="search-bar">
-            <ul>
-            <li><input type="checkbox">Option</li>
-            <li><input type="checkbox">Option</li>
-            <li><input type="checkbox">Option</li>
-            <li><input type="checkbox">Option</li>
-            </ul>
-        </div> 
-        <div id="products">
-            <div id="items">
-            <div id="item1">
-                <img src="https://polskikoszyk.pl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/8845/papryka-czerwona-1-szt-200-g-papryka-prosto-z-sadu_0.jpg">
-                <h4>Item</h4>
+        <section id="search"> <!-- Search section -->
+            <div id="option-bar"> <!--- Options section -->
+                <ul>
+                    <li>
+                        <input type="checkbox">Option
+                    </li>
+                    <li>
+                        <input type="checkbox">Option
+                    </li>
+                    <li>
+                        <input type="checkbox">Option
+                    </li>
+                    <li>
+                        <input type="checkbox">Option
+                    </li>
+                </ul>
+            </div> 
+            <div id="products"> <!-- Products to choose section -->
+                <div id="items">
+                    <div id="item1">
+                        <img class="img-item" src="https://polskikoszyk.pl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/8845/papryka-czerwona-1-szt-200-g-papryka-prosto-z-sadu_0.jpg">
+                        <h4>Item</h4>
+                    </div>
+                    <div id="item2">
+                        <img class="img-item" src="https://polskikoszyk.pl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/8845/papryka-czerwona-1-szt-200-g-papryka-prosto-z-sadu_0.jpg">
+                        <h4>Item</h4>
+                    </div>
+                    <div id="item3">
+                        <img class="img-item" src="https://polskikoszyk.pl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/8845/papryka-czerwona-1-szt-200-g-papryka-prosto-z-sadu_0.jpg">
+                        <h4>Item</h4>
+                    </div>
+                    <div id="item4">
+                        <img class="img-item" src="https://polskikoszyk.pl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/8845/papryka-czerwona-1-szt-200-g-papryka-prosto-z-sadu_0.jpg">
+                        <h4>Item</h4>
+                    </div>
+                </div>
+                <div id="result"> <!-- Results section within Search section -->
+                    <h3>Found: xxxx</h3>
+                </div>
             </div>
-            <div id="item2">
-                <img src="https://polskikoszyk.pl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/8845/papryka-czerwona-1-szt-200-g-papryka-prosto-z-sadu_0.jpg">
-                <h4>Item</h4>
-            </div>
-            <div id="item3">
-                <img src="https://polskikoszyk.pl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/8845/papryka-czerwona-1-szt-200-g-papryka-prosto-z-sadu_0.jpg">
-                <h4>Item</h4>
-            </div>
-            <div id="item4">
-                <img src="https://polskikoszyk.pl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/8845/papryka-czerwona-1-szt-200-g-papryka-prosto-z-sadu_0.jpg">
-                <h4>Item</h4>
-            </div>
-            </div>
-            <div id="result"><h3>Found: xxxx</h3>
-        </div>
-        </div>
         </section>
-
+        <section id="recipies">
+            <div class="recipe">
+                <img class="img-recipe" src="https://polskikoszyk.pl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/8845/papryka-czerwona-1-szt-200-g-papryka-prosto-z-sadu_0.jpg"> 
+                <h3>Recipe 1</h3>
+            </div>
+            <div class="recipe">
+                <img class="img-recipe" src="https://polskikoszyk.pl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/8845/papryka-czerwona-1-szt-200-g-papryka-prosto-z-sadu_0.jpg"> 
+                <h3>Recipe 2</h3>
+            </div>
+            <div class="recipe">
+                <img class="img-recipe" src="https://polskikoszyk.pl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/8845/papryka-czerwona-1-szt-200-g-papryka-prosto-z-sadu_0.jpg"> 
+                <h3>Recipe 3</h3>
+            </div>
+            <div class="recipe">
+                <img class="img-recipe" src="https://polskikoszyk.pl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/8845/papryka-czerwona-1-szt-200-g-papryka-prosto-z-sadu_0.jpg"> 
+                <h3>Recipe 4</h3>
+            </div>
+        </section>
+        <footer>
+            <p>This is only an exercise</p>
+            <p>Author: turqu</p>
+        </footer>
     </body>
 </html>

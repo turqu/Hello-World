@@ -1,0 +1,111 @@
+/* Main style */
+
+body { margin: 0; }
+
+ul {    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 20px 50px;
+    background-color: lightgray;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+    padding-top: 30px;
+}
+  
+p {
+    font-size: 2em;
+    padding: 0 50px;
+}
+
+img { 
+    height: 9.375em; /* 150px */
+    padding: 30px;
+ }
+
+/* Header style */
+  
+header, #logotype {
+    background-color: whitesmoke;
+    text-align: center;
+}
+  
+#logo-nav {
+    display: flex;
+    margin: auto;
+    padding: 20px 80px 20px 80px;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+#logo {
+    height: 60px;
+    width: 200px;
+    background-color: lightgray;
+}
+
+header ul { display: flex; }
+
+/* Sections styles */
+  
+#logotype {
+    clear: both;
+    padding: 50px;
+    background-color: lightgray;
+}
+  
+#search, #recipies {
+    display: flex;
+    padding: 0 60px; 
+}
+  
+#option-bar li {
+    background-color: whitesmoke;
+    height: 40px;
+    padding-top: 30px;
+}
+  
+#products { width: 100%; }
+  
+#items {
+    display: flex;
+    justify-content: space-around;
+    background-color: grey;
+    height: 280px;
+}
+  
+#result {
+    padding: 10px;
+    background-color: lightgray;
+    text-align: center;
+    height: 60px;
+}
+
+#recipies { 
+    justify-content: space-between;
+    padding: 30px 60px 30px 60px;
+    background-color: darkgrey;
+}
+
+.recipe {
+    background-color: grey;
+    width: 20%;
+    text-align: center;
+}
+/* Footer style */
+
+footer {
+    font-size: 0.5em;
+    display: flex;
+    background-color: lightgrey;
+}
+
+
+  
+  
