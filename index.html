@@ -4,30 +4,59 @@
         <meta charset="UTF-8">
         <title>Exercise - Homepage</title>
         <link href="styles.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     </head>
     <body>
         <header>
             <nav id="logo-nav">
-                <div id="logo">LOGO</div>
+                <div id="logo">
+                    <i class="fas fa-utensils"></i>
+                    <h1>the meal seeker</h1>
+                </div>
                 <div id="logo-list">
                     <ul>
-                        <li><a href="index.html">Homepage</a></li>
-                        <li><a href="search.html">Search</a></li>
-                        <li><a href="result.html">Result</a></li>
+                        <li class="btn btn-nav"><a href="index.html">Homepage</a></li>
+                        <li class="btn btn-nav"><a href="search.html">Search</a></li>
+                        <li class="btn btn-nav"><a href="result.html">Result</a></li>
                     </ul>
                 </div>
             </nav>
         </header>  
-
         <main id="headline"> 
-            <h1>Headline</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <h2>Start your search <a href="search.html">here!</a></h2>
+            <div id="background-headline">
+                <img src="images/background.jpg">
+            </div>
+            <div id="foreground-headline">
+                <h1>Lorem? Ipsum. Dolor!</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
         </main>
+        <article>
+            <div class="article-content">
+                <h2 class="btn btn-article"><a href="search.html">Start search</a></h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                </p>
+            </div>
+            <div class="article-content">
+                <h2 class="btn btn-article"><a href="search.html">Check results</a></h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                </p>
+            </div>
+            <div class="article-content">
+                <h2 class="btn btn-article"><a href="search.html">Go to homepage</a></h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                </p>
+            </div>
+        </article>
         <footer>
             <p>This is only an exercise</p>
+            <p>Lorem ipsum dolor sit amet.<br>Consectetur adipiscing elit<br>Sed do eiusmod tempor incididunt</p>
+            <p>Lorem ipsum dolor sit amet.<br>Consectetur adipiscing elit<br>Sed do eiusmod tempor incididunt</p>
             <p>Author: turqu</p>
         </footer>
     </body>
