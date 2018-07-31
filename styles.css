@@ -6,10 +6,14 @@
     #DACA4C - yellow;
     #CC271A - red;
     #D9DAC9 - light grey;
-    #22140F - dark brown;
-    #BF89AB - rosy;
     #602F27 - headline background brown;
     white - white;
+*/
+
+/* Not used colors */
+
+/*  #22140F - dark brown;
+    #BF89AB - lila;
 */
 
 /* Main style */
@@ -26,30 +30,26 @@ ul {
     padding: 0;
 }
 
-li {
-    padding: 20px 50px;
-    background-color: lightgray;
-}
+li { padding: 20px 50px; }
 
 h1 {
     font-size: 3em;
+    text-align: center;
     margin: 0;
     padding-top: 30px;
-    text-align: center;
 }
 
 h2 {
+    font-size: 2em;
     text-align: center;
-    background-color: lightgray;
     margin: 0;
     padding: 30px;
-    font-size: 2em;
 }
   
 p {
     font-size: 2em;
-    padding: 0 50px;
     margin: 0;
+    padding: 0 50px;
 }
 
 /* Button style */
@@ -73,18 +73,31 @@ p {
     border: 2px solid #339907;
 }
 
-.btn-nav a, .btn-article a {
-    color: #D9DAC9;
-}
+.btn-nav a, .btn-article a { color: #D9DAC9; }
 
 .btn-article {
-    background-color: #339907;
     display: inline-block;
+    background-color: #339907;
+    color: white;
     margin: 40px;
 }
 
-.btn-article:hover {
+.btn-article:hover { background-color: #6D190B; }
+
+.btn-submit {
+    display: inline-block;
     background-color: #6D190B;
+    color: white;
+    margin: 40px;
+}
+
+.btn-submit:hover { background-color: #339907; }
+
+/* Images style */
+
+.img-recipe { 
+    max-height: 9.375em; /* 150px */
+    padding: 30px;
 }
 
 /* Header/Navigation style */
@@ -96,15 +109,15 @@ header {
 
 #logo-nav {
     display: flex;
-    margin: auto;
-    padding: 20px 80px 20px 80px;
     align-items: center;
     justify-content: space-between;
+    margin: auto;
+    padding: 20px 80px 20px 80px;
 }
   
 #logo {
-    padding: 20px;
     color: #CC271A;
+    padding: 20px;
 }
 
 .fa-utensils {
@@ -124,9 +137,7 @@ header ul {
     padding: 0;
 }
 
-#logo-list > ul > li {
-    margin: 0 30px;
-}
+#logo-list > ul > li { margin: 0 30px; }
 
 /***** Sections styles *****/
 
@@ -134,10 +145,10 @@ header ul {
 
 #headline {
     clear: both;
-    padding: 80px;
     position: relative;
     overflow: hidden;
     background-color:#602F27;
+    padding: 80px;
 }
 
 #headline img {
@@ -158,107 +169,184 @@ header ul {
 }
 
 #foreground-headline > p {
-    margin: 0;
-    padding: 50px;
     line-height: 1.8em;
     font-size: 1.8em;
+    margin: 0;
+    padding: 50px;
 }
 
 /* Article section - index.html */
 
 article {
+    display: flex;
     text-align: center;
-    width: 85%;
     margin: auto;
+    width: 90%;
 }
 
-.article-content {
-    width: 33.3333%;
-    float: left;
-    background-color: #DACA4C;
-    min-height: 300px;
-
-}
+.article-content { margin: 20px; }
 
 article h2 {
-    background:none;
+    background: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
     color: #CC271A;
 }
 
 article p {
     font-size: 1.5em;
-    padding: 0px 40px 30px 40px;
+    padding: 20px;
 }
 
 /* Search section - search.html */
   
-#search-area, #recipies {
+#search-area {
     display: flex;
-    padding: 0 60px; 
+    background-color: #D9DAC9; 
+    padding: 0 60px;
+}
+
+#search h2 {
+    background-color: #CC271A;
+    color: white;
+}
+
+#option-bar {
+    min-width: 180px;
+    padding-top: 20px;
 }
   
 #option-bar li {
-    background-color: whitesmoke;
-    height: 40px;
-    padding-top: 30px;
+    background-color: #D9DAC9;
+    padding: 20px 0;
+    color: #6D190B;
 }
+
+input[type=checkbox] { margin: 0 10px; }
+
+input[type=submit] { margin: 0; }
   
 #products { width: 100%; }
   
 #items {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
-    background-color: grey;
-    height: 280px;
+    background-color: #D9DAC9;
 }
 
-#search-again h3 {
-    margin: 0;
-    padding: 30px;
-    background-color: grey;
-}
-
-.img-recipe, .img-item { 
-    height: 9.375em; /* 150px */
-    padding: 30px;
- }
-
- /* Results section - result.html */ 
-
-#result {
-    padding: 10px;
-    background-color: lightgray;
+#items [id*='item'] {
+    max-width: 280px;
+    background-color: #DACA4C;
+    color: #CC271A;
     text-align: center;
-    height: 60px;
+    margin: 20px 0;
+    padding-bottom: 20px;
+    transition: all 0.5s ease-out 0.1s;
+}
+
+#items [id*='item']:hover { background-color: #81BB29; }
+
+#items [id*='item'] > h4 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+#items [id*='item'] > p {
+    color: white;
+    font-size: 1em;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.img-item { 
+    height: 9.375em; /* 150px */
+    width: 9.375em; /* 150px */
+    overflow: hidden;
+    margin: 30px 50px 15px 50px;
+}
+
+.img-item img {
+    display: inline-block;
+    max-height: 9.375em; /* 150px */
+    margin: auto;
+}
+
+#search-result {
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    background-color: #81BB29;
+    padding-bottom: 40px;
+}
+
+#search-result > * {
+    margin: 0;
+    padding: 40px;
+}
+
+#search-result div { padding: 20px; }
+
+/* Results section - result.html */
+
+#results { text-align: center; }
+
+#results h2 {
+    background-color: #CC271A;
+    color: white;
 }
 
 #recipies { 
-    justify-content: space-between;
-    padding: 30px 60px 30px 60px;
-    background-color: darkgrey;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #DACA4C;
+    padding: 30px 40px 30px 40px;
 }
 
 .recipe {
-    background-color: grey;
-    width: 20%;
+    background-color: #D9DAC9;
     text-align: center;
+    width: 310px;
+    min-height: 300px;
+    margin: 20px;
+    transition: all 0.3s ease-out 0.1s;
 }
 
-#search-again { text-align: center; }
-    
+.recipe:hover {
+    opacity: 0.9;
+    background-color: white;
+}
+
+.recipe h3 { margin: 0; }
+
+#search-again { 
+    text-align: center;
+    background-color: #81BB29;
+    font-size: 1.5em;
+    color: white;
+    padding-bottom: 40px;
+}
+
+#search-again > * {
+    margin: 0;
+    padding: 40px;
+}
+
+#search-again div { padding: 20px; }
+ 
 /* Footer style */
 
 footer {
     clear: both;
-    font-size: 0.5em;
     display: flex;
-    min-height: 140px;
-    background-color: #6D190B;
-    color: #D9DAC9;
     justify-content: space-around;
-    padding-top: 20px;
+    min-height: 140px;
     border-top: 1px solid #D9DAC9;
+    background-color: #6D190B;
+    font-size: 0.5em;
+    color: #D9DAC9;
+    padding-top: 20px;
 }
-  
-  

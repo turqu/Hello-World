@@ -4,20 +4,24 @@
         <meta charset="UTF-8">
         <title>Exercise - Search page</title>
         <link href="styles.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     </head>
     <body>
         <header>
             <nav id="logo-nav">
-                <div id="logo">LOGO</div>
+                <div id="logo">
+                    <i class="fas fa-utensils"></i>
+                        <h1>the meal seeker</h1>
+                </div>
                 <div id="logo-list">
                     <ul>
-                        <li><a href="index.html">Homepage</a></li>
-                        <li><a href="search.html">Search</a></li>
-                        <li><a href="result.html">Result</a></li>
+                        <li class="btn btn-nav"><a href="index.html">Homepage</a></li>
+                        <li class="btn btn-nav"><a href="search.html">Search</a></li>
+                        <li class="btn btn-nav"><a href="result.html">Result</a></li>
                     </ul>
                 </div>
             </nav>
-        </header>  
+        </header> 
         <section id="search"> <!-- Search section -->
             <h2>Search</h2>
             <div id="search-area">
@@ -33,37 +37,44 @@
                             <input type="checkbox">Option
                         </li>
                         <li>
-                            <input type="checkbox">Option
+                            <input class="btn btn-submit" type="submit" value="Start searching">
                         </li>
                     </ul>
                 </div> 
                 <div id="products"> <!-- Products to choose section -->
                     <div id="items">
                         <div id="item1">
-                            <img class="img-item" src="images/basilia.jpg">
+                            <div class="img-item"><img src="images/basilia.jpg"></div>
                             <h4>Item</h4>
+                            <p>Lorem ipsum dolor sit amet.</p>
                         </div>
                         <div id="item2">
-                            <img class="img-item" src="images/peper.jpg">
+                            <div  class="img-item"><img src="images/peper.jpg"></div>
                             <h4>Item</h4>
+                            <p>Lorem ipsum dolor sit amet.</p>
                         </div>
                         <div id="item3">
-                            <img class="img-item" src="images/potato.jpg">
+                            <div  class="img-item"><img src="images/potato.jpg"></div>
                             <h4>Item</h4>
+                            <p>Lorem ipsum dolor sit amet.</p>
                         </div>
                         <div id="item4">
-                            <img class="img-item" src="images/onion.jpg">
+                            <div  class="img-item"><img src="images/onion.jpg"></div>
                             <h4>Item</h4>
+                            <p>Lorem ipsum dolor sit amet.</p>
                         </div>
                     </div>
-                    <div id="result"> <!-- Results section within Search section -->
-                        <h3>Found: 4 matches. <a href="result.html">Click here for the results.</a></h3>
-                    </div>
                 </div>
+            </div>
+            <div id="search-result"> <!-- Results section within Search section -->
+                <h3>Found: 4 matches.</h3>
+                <div class="btn btn-article"><a href="result.html">Go to results</a></div>
             </div>
         </section>
         <footer>
             <p>This is only an exercise</p>
+            <p>Lorem ipsum dolor sit amet.<br>Consectetur adipiscing elit<br>Sed do eiusmod tempor incididunt</p>
+            <p>Lorem ipsum dolor sit amet.<br>Consectetur adipiscing elit<br>Sed do eiusmod tempor incididunt</p>
             <p>Author: turqu</p>
         </footer>
     </body>

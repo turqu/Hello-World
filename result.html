@@ -4,44 +4,53 @@
         <meta charset="UTF-8">
         <title>Exercise - Results page</title>
         <link href="styles.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     </head>
     <body>
         <header>
             <nav id="logo-nav">
-                <div id="logo">LOGO</div>
+                <div id="logo">
+                    <i class="fas fa-utensils"></i>
+                    <h1>the meal seeker</h1>
+                </div>
                 <div id="logo-list">
                     <ul>
-                        <li><a href="index.html">Homepage</a></li>
-                        <li><a href="search.html">Search</a></li>
-                        <li><a href="result.html">Result</a></li>
+                        <li class="btn btn-nav"><a href="index.html">Homepage</a></li>
+                        <li class="btn btn-nav"><a href="search.html">Search</a></li>
+                        <li class="btn btn-nav"><a href="result.html">Result</a></li>
                     </ul>
                 </div>
             </nav>
-        </header>  
+        </header>
         <section id="results">
             <h2>Results</h2>
             <div id="recipies">
                 <div class="recipe">
                     <img class="img-recipe" src="images/result1.jpg"> 
-                    <h3>Recipe 1</h3>
+                    <h3 class="btn btn-article">Recipe 1</h3>
                 </div>
                 <div class="recipe">
                     <img class="img-recipe" src="images/result2.jpg"> 
-                    <h3>Recipe 2</h3>
+                    <h3 class="btn btn-article">Recipe 2</h3>
                 </div>
                 <div class="recipe">
                     <img class="img-recipe" src="images/result3.jpg"> 
-                    <h3>Recipe 3</h3>
+                    <h3 class="btn btn-article">Recipe 3</h3>
                 </div>
                 <div class="recipe">
                     <img class="img-recipe" src="images/result4.jpg"> 
-                    <h3>Recipe 4</h3>
+                    <h3 class="btn btn-article">Recipe 4</h3>
                 </div>
             </div>
-            <div id="search-again"><h3>Not exacly what you want? <a href="search.html">Click here to change ingredients</a></h3></div>
+            <div id="search-again">
+                <h3>Not exacly what you want?</h3>
+                <div class="btn btn-article"><a href="search.html">Change ingredients</a></div>
+            </div>
         </section>
         <footer>
             <p>This is only an exercise</p>
+            <p>Lorem ipsum dolor sit amet.<br>Consectetur adipiscing elit<br>Sed do eiusmod tempor incididunt</p>
+            <p>Lorem ipsum dolor sit amet.<br>Consectetur adipiscing elit<br>Sed do eiusmod tempor incididunt</p>
             <p>Author: turqu</p>
         </footer>
     </body>
