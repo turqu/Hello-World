@@ -93,13 +93,6 @@ p {
 
 .btn-submit:hover { background-color: #339907; }
 
-/* Images style */
-
-.img-recipe { 
-    max-height: 9.375em; /* 150px */
-    padding: 30px;
-}
-
 /* Header/Navigation style */
   
 header {
@@ -108,9 +101,6 @@ header {
 }
 
 #logo-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin: auto;
     padding: 20px 80px 20px 80px;
 }
@@ -127,17 +117,38 @@ header {
 }
 
 #logo h1 {
-    float: right;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
 }
 
-header ul { 
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
+@media only screen and (max-width: 767.999px) { /* media query range problem */
+    header ul { 
+        padding: 20px;
+    }
+
+    #logo-list > ul > li {
+        margin: 20px auto;
+        width: 50%;
+    }
 }
 
-#logo-list > ul > li { margin: 0 30px; }
+@media only screen and (min-width: 768px) {
+    #logo-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #logo h1 {
+        float: right;
+    }    
+
+    header ul { 
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    #logo-list > ul > li { margin: 0 30px; }
+}
 
 /***** Sections styles *****/
 
@@ -154,7 +165,6 @@ header ul {
 #headline img {
     opacity: 0.35;
     position: absolute;
-    width: 100%;
     top: -9999px;
     bottom: -9999px;
     left: -9999px;
@@ -175,13 +185,27 @@ header ul {
     padding: 50px;
 }
 
+@media only screen and (max-width: 767.999px) { /* media query range problem */ 
+    #headline img {
+        width: 250%;
+    }
+
+    #foreground-headline > p {
+        padding: 30px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #headline img {
+        width: 100%;
+    }
+}
+
 /* Article section - index.html */
 
 article {
-    display: flex;
     text-align: center;
     margin: auto;
-    width: 90%;
 }
 
 .article-content { margin: 20px; }
@@ -197,10 +221,31 @@ article p {
     padding: 20px;
 }
 
+@media only screen and (max-width: 767.999px) { /* media query range problem */
+    article {
+        text-align: center;
+        width: 85%;
+        padding-bottom: 20px;
+    }
+    
+    article p {
+        padding: 10px 20px 20px 20px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    article {
+        display: flex;
+    }
+
+    article p {
+        padding: 0px 30px 30px 30px;
+    }
+}
+
 /* Search section - search.html */
   
 #search-area {
-    display: flex;
     background-color: #D9DAC9; 
     padding: 0 60px;
 }
@@ -288,6 +333,20 @@ input[type=submit] { margin: 0; }
 
 #search-result div { padding: 20px; }
 
+@media only screen and (max-width: 767.999px) { /* media query range problem */
+    #option-bar ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #search-area {
+        display: flex;
+    }
+}
+
 /* Results section - result.html */
 
 #results { text-align: center; }
@@ -322,6 +381,11 @@ input[type=submit] { margin: 0; }
 
 .recipe h3 { margin: 0; }
 
+.img-recipe { 
+    max-height: 9.375em; /* 150px */
+    padding: 30px;
+}
+
 #search-again { 
     text-align: center;
     background-color: #81BB29;
@@ -341,12 +405,34 @@ input[type=submit] { margin: 0; }
 
 footer {
     clear: both;
-    display: flex;
-    justify-content: space-around;
-    min-height: 140px;
     border-top: 1px solid #D9DAC9;
     background-color: #6D190B;
     font-size: 0.5em;
     color: #D9DAC9;
     padding-top: 20px;
+}
+
+@media only screen and (max-width: 767.999px) { /* media query range problem */
+    footer {
+        clear: both;
+        border-top: 1px solid #D9DAC9;
+        background-color: #6D190B;
+        font-size: 0.5em;
+        text-align: center;
+        color: #D9DAC9;
+        padding: 20px;
+    }
+
+    footer p {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    footer {
+        display: flex;
+        justify-content: space-around;
+        min-height: 140px;
+        padding-bottom: 20px;
+    }
 }
