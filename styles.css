@@ -120,10 +120,8 @@ header {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
 }
 
-@media only screen and (max-width: 767.999px) { /* media query range problem */
-    header ul { 
-        padding: 20px;
-    }
+@media only screen and (max-width: 767.999px) { /* media query range problem; menu goes under logo, one button in the row */
+    header ul { padding: 20px; }
 
     #logo-list > ul > li {
         margin: 20px auto;
@@ -131,21 +129,35 @@ header {
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1364.9999px) { /* media query range problem; menu goes under logo, all buttons in one row */  
+    header ul { 
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    #logo-list > ul > li { 
+        margin: 10px 30px;
+        width: 150px;
+    }
+
+    #logo-list > ul > li { margin: 10px 30px; }
+}
+
+@media only screen and (min-width: 1365px) { /* set for the good looking logo - logo on the left, menu on the right */
     #logo-nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    #logo h1 {
-        float: right;
-    }    
 
     header ul { 
         display: flex;
         justify-content: space-around;
         padding: 0;
     }
+
+    #logo h1 { float: right; } 
 
     #logo-list > ul > li { margin: 0 30px; }
 }
@@ -159,10 +171,9 @@ header {
     position: relative;
     overflow: hidden;
     background-color:#602F27;
-    padding: 80px;
 }
 
-#headline img {
+#headline img { /* headline image in the background with opacity */
     opacity: 0.35;
     position: absolute;
     top: -9999px;
@@ -172,7 +183,7 @@ header {
     margin: auto;
 }
 
-#foreground-headline {
+#foreground-headline { /* relative position to erase opacity effect on the text */
     position: relative;
     text-align: center;
     color: white;
@@ -185,20 +196,22 @@ header {
     padding: 50px;
 }
 
-@media only screen and (max-width: 767.999px) { /* media query range problem */ 
-    #headline img {
-        width: 250%;
-    }
+@media only screen and (max-width: 420.9999px) { /* media query range problem; set for the none image in the background */
+    #headline { padding: 60px; }
 
-    #foreground-headline > p {
-        padding: 30px;
-    }
+    #headline img { display: none; }
+
+    #foreground-headline > p { padding: 30px 10px 10px 10px; }
 }
 
-@media only screen and (min-width: 768px) {
-    #headline img {
-        width: 100%;
-    }
+@media only screen and (min-width: 421px) and (max-width: 767.999px) { /* media query range problem; background image visible */ 
+    #headline { padding: 40px; }
+}
+
+@media only screen and (min-width: 768px) { /* set for the better looking image in the background */
+    #headline { padding: 80px; }
+    
+    #headline img { width: 120%; }
 }
 
 /* Article section - index.html */
@@ -221,26 +234,20 @@ article p {
     padding: 20px;
 }
 
-@media only screen and (max-width: 767.999px) { /* media query range problem */
+@media only screen and (max-width: 767.999px) { /* media query range problem; article content without flex, 3 rows with content visible */
     article {
         text-align: center;
         width: 85%;
         padding-bottom: 20px;
     }
     
-    article p {
-        padding: 10px 20px 20px 20px;
-    }
+    article p { padding: 10px 20px 20px 20px; }
 }
 
-@media only screen and (min-width: 768px){
-    article {
-        display: flex;
-    }
+@media only screen and (min-width: 768px) { /* flex visible content */
+    article { display: flex; }
 
-    article p {
-        padding: 0px 30px 30px 30px;
-    }
+    article p { padding: 0px 30px 30px 30px; }
 }
 
 /* Search section - search.html */
@@ -283,7 +290,6 @@ input[type=submit] { margin: 0; }
 #items [id*='item'] {
     max-width: 280px;
     background-color: #DACA4C;
-    color: #CC271A;
     text-align: center;
     margin: 20px 0;
     padding-bottom: 20px;
@@ -292,15 +298,16 @@ input[type=submit] { margin: 0; }
 
 #items [id*='item']:hover { background-color: #81BB29; }
 
-#items [id*='item'] > h4 {
+#items [id*='item'] h4 {
     font-size: 1.5em;
+    color: #CC271A;
     margin: 0;
     padding: 10px 20px;
 }
 
-#items [id*='item'] > p {
-    color: white;
+#items [id*='item'] p {
     font-size: 1em;
+    color: #CC271A;
     margin: 0;
     padding: 10px 20px;
 }
@@ -333,7 +340,110 @@ input[type=submit] { margin: 0; }
 
 #search-result div { padding: 20px; }
 
-@media only screen and (max-width: 767.999px) { /* media query range problem */
+@media only screen and (max-width: 420.9999px) { /* media query range problem; a little complicated solution, images are set as background in the cards */
+    #option-bar ul { text-align: center; }
+
+    #products { margin: auto; }
+
+    /* items, img-item and img with changes, image as background with the opacity */
+
+    #items [id*='item'] {
+        position: relative;
+        overflow: hidden;
+        margin: 20px;
+    }
+
+    .img-item {
+        height: initial;
+        width: initial;
+        overflow: initial;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .img-item img {
+        opacity: 0.55;
+        position: absolute;
+        max-height: initial;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        margin: auto;
+    }
+
+    .items-foreground { position: relative; }
+
+    #items [id*='item'] h4 {
+        color: white;
+        font-size: 1.8em;
+        padding: 30px;
+    }
+    
+    #items [id*='item'] p {
+        color: white;
+        font-size: 1.3em;
+        padding: 10px 20px;
+    }
+}
+
+@media only screen and (min-width: 421px) and (max-width: 1179.9999px) { /* media query range problem; the better looking solution from the width range to 420.999px */
+    #option-bar ul { /* flex bar with options */
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    #products { /* smaller area to avoid effect of three cards in the first row */
+        width: 89%;
+        margin: auto;
+    }
+
+    /* items, img-item and img with changes, image as background with the opacity */
+
+    #items [id*='item'] {
+        position: relative;
+        overflow: hidden;
+        margin: 20px;
+    }
+
+    .img-item {
+        height: initial;
+        width: initial;
+        overflow: initial;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .img-item img {
+        opacity: 0.55;
+        position: absolute;
+        max-height: initial;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        margin: auto;
+    }
+
+    .items-foreground {
+        position: relative;
+    }
+
+    #items [id*='item'] h4 {
+        color: white;
+        font-size: 1.8em;
+        padding: 30px;
+    }
+    
+    #items [id*='item'] p {
+        color: white;
+        font-size: 1.3em;
+        padding: 10px 20px;
+    }
+}
+
+@media only screen and (min-width: 1180px)and (max-width: 1364.9999px) { /* media query range problem; option bar with flex and different looking cards */
     #option-bar ul {
         display: flex;
         justify-content: space-between;
@@ -341,13 +451,13 @@ input[type=submit] { margin: 0; }
     }
 }
 
-@media only screen and (min-width: 768px) {
-    #search-area {
-        display: flex;
-    }
+@media only screen and (min-width: 1365px) { /* the whole search area with flex; option bar on the left, cards with items on the right */
+    #search-area { display: flex; }
 }
 
 /* Results section - result.html */
+
+/* for a while none additional responsive code */
 
 #results { text-align: center; }
 
@@ -412,7 +522,7 @@ footer {
     padding-top: 20px;
 }
 
-@media only screen and (max-width: 767.999px) { /* media query range problem */
+@media only screen and (max-width: 767.999px) { /* media query range problem; one <p> in the one row */
     footer {
         clear: both;
         border-top: 1px solid #D9DAC9;
@@ -428,7 +538,7 @@ footer {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) /* flex layout, 4 columns effect */ {
     footer {
         display: flex;
         justify-content: space-around;
