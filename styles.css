@@ -57,6 +57,7 @@ p {
 .btn {
     padding: 20px;
     border-radius: 5px;
+    -webkit-transition: all 0.5s ease-out 0.1s;
     transition: all 0.5s ease-out 0.1s;
 }
 
@@ -131,7 +132,16 @@ header {
 
 @media only screen and (min-width: 768px) and (max-width: 1364.9999px) { /* media query range problem; menu goes under logo, all buttons in one row */  
     header ul { 
-        display: flex;
+        /* Flexbox prefixes */
+        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        -ms-flex-pack: distribute;
         justify-content: space-around;
         padding: 0;
     }
@@ -140,19 +150,39 @@ header {
         margin: 10px 30px;
         width: 150px;
     }
-
-    #logo-list > ul > li { margin: 10px 30px; }
 }
 
 @media only screen and (min-width: 1365px) { /* set for the good looking logo - logo on the left, menu on the right */
     #logo-nav {
-        display: flex;
+        /* Flexbox prefixes */
+        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
     }
 
     header ul { 
-        display: flex;
+        /* Flexbox prefixes */
+        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        -ms-flex-pack: distribute;
         justify-content: space-around;
         padding: 0;
     }
@@ -167,10 +197,10 @@ header {
 /* Main/Headline area - index.html */  
 
 #headline {
+    background-color:#602F27;
     clear: both;
     position: relative;
     overflow: hidden;
-    background-color:#602F27;
 }
 
 #headline img { /* headline image in the background with opacity */
@@ -210,10 +240,35 @@ header {
 
 @media only screen and (min-width: 768px) { /* set for the better looking image in the background */
     #headline { padding: 80px; }
-    
+
     #headline img { width: 120%; }
 }
 
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) { /* For IE 10+ - without it problems with headline (no background etc.) */
+        
+    #headline {
+        display: inline-block; /* this option allows IE to use the brown background >#602F27< instead of yellow body's background >#DACA4C< */
+        width: 100%;
+        overflow: initial;
+        padding: 0;
+    }
+    
+    #background-headline {
+        background-image: url(images/background.jpg);
+        opacity: 0.35;
+        filter: alpha(opacity=35); /* For IE8 and earlier */
+    }
+
+    #foreground-headline > h1 {
+        padding-top: 100px;
+    }
+
+    #foreground-headline > p {
+        padding-top: 50px;
+        padding-bottom: 100px;
+    }
+
+}
 /* Article section - index.html */
 
 article {
@@ -245,7 +300,17 @@ article p {
 }
 
 @media only screen and (min-width: 768px) { /* flex visible content */
-    article { display: flex; }
+    article { 
+        /* Flexbox prefixes */
+        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+     }
 
     article p { padding: 0px 30px 30px 30px; }
 }
@@ -280,9 +345,24 @@ input[type=submit] { margin: 0; }
 #products { width: 100%; }
   
 #items {
-    display: flex;
+    /* Flexbox prefixes */
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
     background-color: #D9DAC9;
 }
@@ -293,6 +373,7 @@ input[type=submit] { margin: 0; }
     text-align: center;
     margin: 20px 0;
     padding-bottom: 20px;
+    -webkit-transition: all 0.5s ease-out 0.1s;
     transition: all 0.5s ease-out 0.1s;
 }
 
@@ -313,15 +394,13 @@ input[type=submit] { margin: 0; }
 }
 
 .img-item { 
-    height: 9.375em; /* 150px */
-    width: 9.375em; /* 150px */
+    max-width: 9.375em; /* 150px */
     overflow: hidden;
     margin: 30px 50px 15px 50px;
 }
 
 .img-item img {
     display: inline-block;
-    max-height: 9.375em; /* 150px */
     margin: auto;
 }
 
@@ -341,6 +420,7 @@ input[type=submit] { margin: 0; }
 #search-result div { padding: 20px; }
 
 @media only screen and (max-width: 420.9999px) { /* media query range problem; a little complicated solution, images are set as background in the cards */
+
     #option-bar ul { text-align: center; }
 
     #products { margin: auto; }
@@ -354,8 +434,6 @@ input[type=submit] { margin: 0; }
     }
 
     .img-item {
-        height: initial;
-        width: initial;
         overflow: initial;
         margin: 0;
         padding: 0;
@@ -364,7 +442,6 @@ input[type=submit] { margin: 0; }
     .img-item img {
         opacity: 0.55;
         position: absolute;
-        max-height: initial;
         top: -9999px;
         bottom: -9999px;
         left: -9999px;
@@ -389,8 +466,16 @@ input[type=submit] { margin: 0; }
 
 @media only screen and (min-width: 421px) and (max-width: 1179.9999px) { /* media query range problem; the better looking solution from the width range to 420.999px */
     #option-bar ul { /* flex bar with options */
-        display: flex;
+        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+        /* Flexbox prefixes */
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
         align-items: baseline;
     }
 
@@ -408,8 +493,6 @@ input[type=submit] { margin: 0; }
     }
 
     .img-item {
-        height: initial;
-        width: initial;
         overflow: initial;
         margin: 0;
         padding: 0;
@@ -418,7 +501,6 @@ input[type=submit] { margin: 0; }
     .img-item img {
         opacity: 0.55;
         position: absolute;
-        max-height: initial;
         top: -9999px;
         bottom: -9999px;
         left: -9999px;
@@ -443,16 +525,46 @@ input[type=submit] { margin: 0; }
     }
 }
 
-@media only screen and (min-width: 1180px)and (max-width: 1364.9999px) { /* media query range problem; option bar with flex and different looking cards */
+@media only screen and (min-width: 1180px) and (max-width: 1364.9999px) { /* media query range problem; option bar with flex and different looking cards */
     #option-bar ul {
-        display: flex;
+        /* Flexbox prefixes */
+        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
         align-items: baseline;
+    }
+
+    .img-item img {
+        max-height: 9.375em; /* 150px */
     }
 }
 
 @media only screen and (min-width: 1365px) { /* the whole search area with flex; option bar on the left, cards with items on the right */
-    #search-area { display: flex; }
+    #search-area { 
+        /* Flexbox prefixes */
+        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+    }
+
+    .img-item img {
+        max-height: 9.375em; /* 150px */
+    }
 }
 
 /* Results section - result.html */
@@ -467,9 +579,24 @@ input[type=submit] { margin: 0; }
 }
 
 #recipies { 
-    display: flex;
+    /* Flexbox prefixes */
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+    -webkit-box-flex: 1;
+        -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
     background-color: #DACA4C;
     padding: 30px 40px 30px 40px;
@@ -481,6 +608,7 @@ input[type=submit] { margin: 0; }
     width: 310px;
     min-height: 300px;
     margin: 20px;
+    -webkit-transition: all 0.3s ease-out 0.1s;
     transition: all 0.3s ease-out 0.1s;
 }
 
@@ -540,7 +668,16 @@ footer {
 
 @media (min-width: 768px) /* flex layout, 4 columns effect */ {
     footer {
-        display: flex;
+        /* Flexbox prefixes */
+        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        -ms-flex-pack: distribute;
         justify-content: space-around;
         min-height: 140px;
         padding-bottom: 20px;
