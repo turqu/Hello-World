@@ -1,27 +1,53 @@
-/* Color list */
+/* Notes */
+/* Every layout designed for mobile first, then come the other devices */ 
 
-/*  #6D190B - brown;
-    #339907 - green;
-    #81BB29 - light green;
-    #DACA4C - yellow;
-    #CC271A - red;
-    #D9DAC9 - light grey;
-    #602F27 - headline background brown;
-    white - white;
-*/
+/* Backgrounds */
+/* Used usually when they allow to avoid repeating the background-color property */
 
-/* Not used colors */
+.background-primary     { background-color: #DACA4C; }
+.background-secondary   { background-color: #602F27; }
+.background-tertiary    { background-color: #D9DAC9; }
+.background-quaternary  { background-color: #CC271A; }
+.background-quinary     { background-color: #81BB29; }
+.background-senary      { background-color: #6D190B; }
 
-/*  #22140F - dark brown;
-    #BF89AB - lila;
-*/
+/* Other colors */
 
-/* Main style */
+/*  #339907 - green;
+    #ffffff - white text;  
+
+-- Not used colors --
+    #22140F - dark brown;
+    #BF89AB - lila;  */
+
+/* Breakpoints for the responsive layout - according to https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
+    /*  Extra small devices (phones, 600px and down)
+        @media only screen and (max-width: 600px) {...} 
+
+        Small devices (portrait tablets and large phones, 600px and up)
+        @media only screen and (min-width: 600px) {...} 
+
+        Medium devices (landscape tablets, 768px and up) -- used as the main breakpoint in this site --
+        @media only screen and (min-width: 768px) {...} 
+
+        Large devices (laptops/desktops, 992px and up)
+        @media only screen and (min-width: 992px) {...} 
+
+        Very large devices (large laptops and desktops, 1200px and up) 
+        @media only screen and (min-width: 1200px) {...}
+
+        Extra large devices (large laptops and desktops, 1350px and up) -- used only several times --
+        @media only screen and (min-width: 1350px) {...} */
+
+/* Main style for each site */
 
 body { 
+    padding: 0;
     margin: 0;
     font-family: sans-serif;
+    text-align: center;
     background-color: #DACA4C;
+    color: #ffffff;
 }
 
 ul {    
@@ -32,27 +58,26 @@ ul {
 
 li { padding: 20px 50px; }
 
-h1 {
-    font-size: 3em;
-    text-align: center;
-    margin: 0;
-    padding-top: 30px;
-}
+h1 { font-size: 3em; }
 
-h2 {
-    font-size: 2em;
-    text-align: center;
+h2 { font-size: 2em; }
+
+h3 { font-size: 1.8em; }
+
+h4 { font-size: 1.5em }
+
+h1, h2, h3, h4 {
     margin: 0;
     padding: 30px;
 }
   
 p {
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0;
-    padding: 0 50px;
+    padding: 50px;
 }
 
-/* Button style */
+/* Button style for each site */
 
 .btn {
     padding: 20px;
@@ -60,6 +85,8 @@ p {
     -webkit-transition: all 0.5s ease-out 0.1s;
     transition: all 0.5s ease-out 0.1s;
 }
+
+.btn-nav a, .btn-article a { color: #D9DAC9; }
 
 .btn-nav {
     min-width: 90px;
@@ -74,12 +101,9 @@ p {
     border: 2px solid #339907;
 }
 
-.btn-nav a, .btn-article a { color: #D9DAC9; }
-
 .btn-article {
     display: inline-block;
     background-color: #339907;
-    color: white;
     margin: 40px;
 }
 
@@ -88,22 +112,18 @@ p {
 .btn-submit {
     display: inline-block;
     background-color: #6D190B;
-    color: white;
+    color: #ffffff;
     margin: 40px;
 }
 
 .btn-submit:hover { background-color: #339907; }
 
-/* Header/Navigation style */
-  
-header {
-    background-color: #DACA4C;
-    text-align: center;
-}
 
+/* Header/Navigation style for each site; designed for devices smaller than 768px */
+  
 #logo-nav {
     margin: auto;
-    padding: 20px 80px 20px 80px;
+    padding: 20px 80px;
 }
   
 #logo {
@@ -113,24 +133,21 @@ header {
 
 .fa-utensils {
     font-size: 5em;
-    padding-right: 20px;
-    padding-left: 40px;
+    padding: 0 20px 0 40px;
 }
 
 #logo h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
 }
 
-@media only screen and (max-width: 767.999px) { /* media query range problem; menu goes under logo, one button in the row */
-    header ul { padding: 20px; }
+header ul { padding: 20px; }
 
-    #logo-list > ul > li {
-        margin: 20px auto;
-        width: 50%;
-    }
+#logo-list > ul > li {
+    margin: 20px auto;
+    width: 50%;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1364.9999px) { /* media query range problem; menu goes under logo, all buttons in one row */  
+@media only screen and (min-width: 768px) { /* For devices with min. width 768px */  
     header ul { 
         /* Flexbox prefixes */
         display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -141,6 +158,10 @@ header {
         -webkit-flex: 1 0 auto;
         -ms-flex: 1 0 auto;
         flex: 1 0 auto;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
         -ms-flex-pack: distribute;
         justify-content: space-around;
         padding: 0;
@@ -152,7 +173,7 @@ header {
     }
 }
 
-@media only screen and (min-width: 1365px) { /* set for the good looking logo - logo on the left, menu on the right */
+@media only screen and (min-width: 1350px) { /* For devices with min. width 1350px */
     #logo-nav {
         /* Flexbox prefixes */
         display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -172,21 +193,6 @@ header {
         justify-content: space-between;
     }
 
-    header ul { 
-        /* Flexbox prefixes */
-        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-        display: -ms-flexbox;  /* TWEENER - IE 10 */
-        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
-        -webkit-box-flex: 1;
-        -webkit-flex: 1 0 auto;
-        -ms-flex: 1 0 auto;
-        flex: 1 0 auto;
-        -ms-flex-pack: distribute;
-        justify-content: space-around;
-        padding: 0;
-    }
-
     #logo h1 { float: right; } 
 
     #logo-list > ul > li { margin: 0 30px; }
@@ -194,13 +200,13 @@ header {
 
 /***** Sections styles *****/
 
-/* Main/Headline area - index.html */  
+/** Main/Headline area - index.html - designed for devices smaller than 768px **/  
 
 #headline {
-    background-color:#602F27;
     clear: both;
     position: relative;
     overflow: hidden;
+    padding: 60px;
 }
 
 #headline img { /* headline image in the background with opacity */
@@ -213,38 +219,23 @@ header {
     margin: auto;
 }
 
-#foreground-headline { /* relative position to erase opacity effect on the text */
-    position: relative;
-    text-align: center;
-    color: white;
-}
+#foreground-headline { position: relative; } /* relative position to erase opacity effect on the text */
 
 #foreground-headline > p {
     line-height: 1.8em;
     font-size: 1.8em;
     margin: 0;
-    padding: 50px;
+    padding: 30px 10px 10px 10px;
 }
 
-@media only screen and (max-width: 420.9999px) { /* media query range problem; set for the none image in the background */
-    #headline { padding: 60px; }
+@media only screen and (min-width: 768px) { /* For devices with min. width 768px */
 
-    #headline img { display: none; }
-
-    #foreground-headline > p { padding: 30px 10px 10px 10px; }
-}
-
-@media only screen and (min-width: 421px) and (max-width: 767.999px) { /* media query range problem; background image visible */ 
-    #headline { padding: 40px; }
-}
-
-@media only screen and (min-width: 768px) { /* set for the better looking image in the background */
     #headline { padding: 80px; }
 
     #headline img { width: 120%; }
 }
 
-@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) { /* For IE 10+ - without it problems with headline (no background etc.) */
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) { /* For IE 10+ */
         
     #headline {
         display: inline-block; /* this option allows IE to use the brown background >#602F27< instead of yellow body's background >#DACA4C< */
@@ -259,21 +250,19 @@ header {
         filter: alpha(opacity=35); /* For IE8 and earlier */
     }
 
-    #foreground-headline > h1 {
-        padding-top: 100px;
+    #foreground-headline {
+        padding: 100px;
     }
 
-    #foreground-headline > p {
-        padding-top: 50px;
-        padding-bottom: 100px;
-    }
-
+    #foreground-headline > p { padding-top: 50px; }
 }
-/* Article section - index.html */
 
-article {
-    text-align: center;
-    margin: auto;
+/** Article section - index.html - designed for devices smaller than 768px **/
+
+article { 
+    margin: 20px auto;
+    width: 85%;
+    padding-bottom: 20px;
 }
 
 .article-content { margin: 20px; }
@@ -281,25 +270,11 @@ article {
 article h2 {
     background: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
-    color: #CC271A;
 }
 
-article p {
-    font-size: 1.5em;
-    padding: 20px;
-}
+article p { padding: 10px 20px 20px; }
 
-@media only screen and (max-width: 767.999px) { /* media query range problem; article content without flex, 3 rows with content visible */
-    article {
-        text-align: center;
-        width: 85%;
-        padding-bottom: 20px;
-    }
-    
-    article p { padding: 10px 20px 20px 20px; }
-}
-
-@media only screen and (min-width: 768px) { /* flex visible content */
+@media only screen and (min-width: 768px) { /* For devices with min. width 768px */
     article { 
         /* Flexbox prefixes */
         display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -310,22 +285,72 @@ article p {
         -webkit-flex: 1 0 auto;
         -ms-flex: 1 0 auto;
         flex: 1 0 auto;
-     }
+        width: auto;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        margin: auto;
+        margin: auto;
+    }
 
-    article p { padding: 0px 30px 30px 30px; }
+    .article-content h2, .article-content p {
+        font-size: 1.5em;
+        margin: 10px;
+    }
+
+    article p { 
+        font-size: 1.3em;
+        padding: 0 20px 20px;
+    }
 }
 
-/* Search section - search.html */
+@media only screen and (min-width: 992px) { /* For devices with min. width 992px */
+    article { 
+        /* Flexbox prefixes */
+        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        width: auto;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        margin: auto;
+    }
+
+    .article-content { margin: 30px; }
+
+    article p { padding: 0 30px 20px; }
+}
+
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) { /* For IE 10+ - flex wrapping added */
+    article {
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    
+    .article-content {
+        max-width: 350px;
+        margin: auto;
+    }
+}
+
+/* Search section - search.html - designed for devices smaller than 600px */
   
-#search-area {
-    background-color: #D9DAC9; 
-    padding: 0 60px;
-}
-
-#search h2 {
-    background-color: #CC271A;
-    color: white;
-}
+#search-area { padding: 0 60px; }
 
 #option-bar {
     min-width: 180px;
@@ -334,15 +359,18 @@ article p {
   
 #option-bar li {
     background-color: #D9DAC9;
-    padding: 20px 0;
     color: #6D190B;
+    padding: 20px 0;
 }
 
 input[type=checkbox] { margin: 0 10px; }
 
 input[type=submit] { margin: 0; }
   
-#products { width: 100%; }
+#products { 
+    width: 100%;
+    margin: auto;
+}
   
 #items {
     /* Flexbox prefixes */
@@ -364,14 +392,15 @@ input[type=submit] { margin: 0; }
     flex-wrap: wrap;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    background-color: #D9DAC9;
+    padding: 20px 10px 50px;
 }
 
 #items [id*='item'] {
+    position: relative;
+    overflow: hidden;
     max-width: 280px;
     background-color: #DACA4C;
-    text-align: center;
-    margin: 20px 0;
+    margin: 20px;
     padding-bottom: 20px;
     -webkit-transition: all 0.5s ease-out 0.1s;
     transition: all 0.5s ease-out 0.1s;
@@ -379,36 +408,38 @@ input[type=submit] { margin: 0; }
 
 #items [id*='item']:hover { background-color: #81BB29; }
 
-#items [id*='item'] h4 {
-    font-size: 1.5em;
-    color: #CC271A;
-    margin: 0;
-    padding: 10px 20px;
-}
-
-#items [id*='item'] p {
-    font-size: 1em;
-    color: #CC271A;
-    margin: 0;
-    padding: 10px 20px;
-}
-
 .img-item { 
     max-width: 9.375em; /* 150px */
-    overflow: hidden;
-    margin: 30px 50px 15px 50px;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
 }
 
 .img-item img {
     display: inline-block;
+    opacity: 0.55;
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
     margin: auto;
 }
 
+.items-foreground { position: relative; }
+
+.items-foreground h4 {
+    font-size: 1.8em;
+    padding: 30px;
+}
+
+.items-foreground p {
+    font-size: 1.3em;
+    padding: 10px 20px;
+}
+
 #search-result {
-    text-align: center;
     font-size: 1.5em;
-    color: white;
-    background-color: #81BB29;
     padding-bottom: 40px;
 }
 
@@ -419,114 +450,8 @@ input[type=submit] { margin: 0; }
 
 #search-result div { padding: 20px; }
 
-@media only screen and (max-width: 420.9999px) { /* media query range problem; a little complicated solution, images are set as background in the cards */
-
-    #option-bar ul { text-align: center; }
-
-    #products { margin: auto; }
-
-    /* items, img-item and img with changes, image as background with the opacity */
-
-    #items [id*='item'] {
-        position: relative;
-        overflow: hidden;
-        margin: 20px;
-    }
-
-    .img-item {
-        overflow: initial;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .img-item img {
-        opacity: 0.55;
-        position: absolute;
-        top: -9999px;
-        bottom: -9999px;
-        left: -9999px;
-        right: -9999px;
-        margin: auto;
-    }
-
-    .items-foreground { position: relative; }
-
-    #items [id*='item'] h4 {
-        color: white;
-        font-size: 1.8em;
-        padding: 30px;
-    }
-    
-    #items [id*='item'] p {
-        color: white;
-        font-size: 1.3em;
-        padding: 10px 20px;
-    }
-}
-
-@media only screen and (min-width: 421px) and (max-width: 1179.9999px) { /* media query range problem; the better looking solution from the width range to 420.999px */
-    #option-bar ul { /* flex bar with options */
-        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-        display: -ms-flexbox;  /* TWEENER - IE 10 */
-        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
-        /* Flexbox prefixes */
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        -webkit-box-align: baseline;
-        -ms-flex-align: baseline;
-        align-items: baseline;
-    }
-
-    #products { /* smaller area to avoid effect of three cards in the first row */
-        width: 89%;
-        margin: auto;
-    }
-
-    /* items, img-item and img with changes, image as background with the opacity */
-
-    #items [id*='item'] {
-        position: relative;
-        overflow: hidden;
-        margin: 20px;
-    }
-
-    .img-item {
-        overflow: initial;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .img-item img {
-        opacity: 0.55;
-        position: absolute;
-        top: -9999px;
-        bottom: -9999px;
-        left: -9999px;
-        right: -9999px;
-        margin: auto;
-    }
-
-    .items-foreground {
-        position: relative;
-    }
-
-    #items [id*='item'] h4 {
-        color: white;
-        font-size: 1.8em;
-        padding: 30px;
-    }
-    
-    #items [id*='item'] p {
-        color: white;
-        font-size: 1.3em;
-        padding: 10px 20px;
-    }
-}
-
-@media only screen and (min-width: 1180px) and (max-width: 1364.9999px) { /* media query range problem; option bar with flex and different looking cards */
-    #option-bar ul {
+@media only screen and (min-width: 600px) { /* For devices with min. width 600px */
+   #option-bar ul { /* flex bar with options */
         /* Flexbox prefixes */
         display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
         display: -ms-flexbox;  /* TWEENER - IE 10 */
@@ -544,12 +469,17 @@ input[type=submit] { margin: 0; }
         align-items: baseline;
     }
 
-    .img-item img {
-        max-height: 9.375em; /* 150px */
+    #products { width: 89%; } /* smaller area to avoid effect of three cards in the first row */
+}
+
+@media only screen and (min-width: 768px) { /* For devices with min. width 768px */
+    #products { 
+        width: 100%;
+        padding: 20px 20px 30px;
     }
 }
 
-@media only screen and (min-width: 1365px) { /* the whole search area with flex; option bar on the left, cards with items on the right */
+@media only screen and (min-width: 1200px) { /* For devices with min. width 1200px */
     #search-area { 
         /* Flexbox prefixes */
         display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -562,32 +492,58 @@ input[type=submit] { margin: 0; }
         flex: 1 0 auto;
     }
 
+    #option-bar ul { display: block; }
+
+    #products { padding: 20px 10px 30px; }
+
+    #items [id*='item'] {
+        min-width: 280px;
+        min-height: 310px;
+    }
+
+    .img-item {
+        overflow: hidden;
+        padding: 30px 20px 0px;
+        max-width: 15em; /* 240px; */
+    }
+
     .img-item img {
+        position: static;
         max-height: 9.375em; /* 150px */
     }
+
+    .items-foreground > * {
+        color: #CC271A;
+        margin: 0;
+    }
+
+    .items-foreground h4 {
+        font-size: 1.8em;
+        padding: 20px;
+    }
+
+    .items-foreground p { font-size: 1em; } 
 }
 
-/* Results section - result.html */
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) { /* For IE 10+ */
 
-/* for a while none additional responsive code */
-
-#results { text-align: center; }
-
-#results h2 {
-    background-color: #CC271A;
-    color: white;
+    #products { max-width: 90%; } /* the max-width allows to show the content without using the horizontal scrollbar */
 }
 
-#recipies { 
+/** Results section - result.html **/
+
+/* For a while none additional responsive code */
+
+#recipies-list { 
     /* Flexbox prefixes */
     display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
     display: -ms-flexbox;  /* TWEENER - IE 10 */
     display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
     -webkit-box-flex: 1;
-        -webkit-flex: 1 0 auto;
-        -ms-flex: 1 0 auto;
-        flex: 1 0 auto;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
@@ -598,15 +554,12 @@ input[type=submit] { margin: 0; }
     flex-wrap: wrap;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    background-color: #DACA4C;
-    padding: 30px 40px 30px 40px;
+    padding: 30px 40px;
 }
 
 .recipe {
     background-color: #D9DAC9;
-    text-align: center;
-    width: 310px;
-    min-height: 300px;
+    max-width: 18.750em; /* 300px */
     margin: 20px;
     -webkit-transition: all 0.3s ease-out 0.1s;
     transition: all 0.3s ease-out 0.1s;
@@ -614,59 +567,39 @@ input[type=submit] { margin: 0; }
 
 .recipe:hover {
     opacity: 0.9;
-    background-color: white;
+    background-color: #ffffff;
 }
-
-.recipe h3 { margin: 0; }
 
 .img-recipe { 
     max-height: 9.375em; /* 150px */
     padding: 30px;
 }
 
-#search-again { 
-    text-align: center;
-    background-color: #81BB29;
-    font-size: 1.5em;
-    color: white;
-    padding-bottom: 40px;
-}
-
-#search-again > * {
-    margin: 0;
+#search-again {
+    color: #ffffff;
     padding: 40px;
 }
 
-#search-again div { padding: 20px; }
+#search-again .btn-article {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
  
-/* Footer style */
+/** Footer style - designed for devices smaller than 768px **/
 
 footer {
     clear: both;
     border-top: 1px solid #D9DAC9;
-    background-color: #6D190B;
-    font-size: 0.5em;
+    font-size: 0.6em;
+    text-align: center;
     color: #D9DAC9;
-    padding-top: 20px;
 }
 
-@media only screen and (max-width: 767.999px) { /* media query range problem; one <p> in the one row */
-    footer {
-        clear: both;
-        border-top: 1px solid #D9DAC9;
-        background-color: #6D190B;
-        font-size: 0.5em;
-        text-align: center;
-        color: #D9DAC9;
-        padding: 20px;
-    }
-
-    footer p {
-        padding: 20px;
-    }
+footer p {
+    padding: 20px;
 }
 
-@media (min-width: 768px) /* flex layout, 4 columns effect */ {
+@media only screen and (min-width: 768px) /* For devices with min. width 768px */ {
     footer {
         /* Flexbox prefixes */
         display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -679,7 +612,6 @@ footer {
         flex: 1 0 auto;
         -ms-flex-pack: distribute;
         justify-content: space-around;
-        min-height: 140px;
-        padding-bottom: 20px;
+        padding: 20px;
     }
 }

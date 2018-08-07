@@ -3,11 +3,11 @@ Hi everyone! It's a simple site according to the exercise from edX's course Micr
 The pages are:
 - static for now, in the future I will put some more advanced code :)
 - coded with HTML and CSS
-- checked only in Opera and Edge
+- checked only in Opera, Edge and IE10+
 
 The pages contain:
 - a few comments to explain some solutions
-- some responsive elements - elements are coded according to their (good or not-good) looking
+- some responsive elements
 
 My tasks in the future:
 - checking the site in other browsers 
@@ -19,4 +19,5 @@ My tasks in the future:
 
 Tasks already done:
 - adding prefixes where they are needed
-- fixing pages for IE11+
+- fixing pages for IE10+
+- shortening the code (for now)

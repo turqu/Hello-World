@@ -3,11 +3,14 @@
     <head lang="en">
         <meta charset="UTF-8">
         <title>Exercise - Search page</title>
+        <meta name="description" content="The page sample as part of HTML/CSS learning">
+        <meta name="keywords" content="sample page html css learning">
+        <meta name="author" content="turqu">
         <link href="styles.css" type="text/css" rel="stylesheet"/>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     </head>
     <body>
-        <header>
+        <header class="background-primary">
             <nav id="logo-nav">
                 <div id="logo">
                     <i class="fas fa-utensils"></i>
@@ -23,8 +26,8 @@
             </nav>
         </header> 
         <section id="search"> <!-- Search section -->
-            <h2>Search</h2>
-            <div id="search-area">
+            <h2 class="background-quaternary">Search</h2>
+            <div id="search-area" class="background-tertiary">
                 <div id="option-bar"> <!--- Options section -->
                     <ul>
                         <li>
@@ -42,10 +45,10 @@
                     </ul>
                 </div> 
                 <div id="products"> <!-- Products to choose section -->
-                    <div id="items">
+                    <div id="items" class="background-tertiary">
                         <div id="item1">
                             <div class="img-item">
-                                <img src="images/basilia.jpg">
+                                <img src="images/basilia.jpg" alt="">
                             </div>
                             <div class="items-foreground">
                                 <h4>Item</h4>
@@ -54,7 +57,7 @@
                         </div>
                         <div id="item2">
                             <div  class="img-item">
-                                <img src="images/peper.jpg">
+                                <img src="images/peper.jpg" alt="">
                             </div>
                             <div class="items-foreground">
                                     <h4>Item</h4>
@@ -63,7 +66,7 @@
                         </div>
                         <div id="item3">
                             <div  class="img-item">
-                                <img src="images/potato.jpg">
+                                <img src="images/potato.jpg" alt="">
                             </div>
                             <div class="items-foreground">
                                     <h4>Item</h4>
@@ -72,7 +75,7 @@
                         </div>
                         <div id="item4">
                             <div  class="img-item">
-                                <img src="images/onion.jpg">
+                                <img src="images/onion.jpg" alt="">
                             </div>
                             <div class="items-foreground">
                                     <h4>Item</h4>
@@ -82,12 +85,12 @@
                     </div>
                 </div>
             </div>
-            <div id="search-result"> <!-- Results section within Search section -->
+            <div id="search-result" class="background-quinary"> <!-- Results section within Search section -->
                 <h3>Found: 4 matches.</h3>
                 <div class="btn btn-article"><a href="result.html">Go to results</a></div>
             </div>
         </section>
-        <footer>
+        <footer class="background-senary">
             <p>This is only an exercise</p>
             <p>Lorem ipsum dolor sit amet.<br>Consectetur adipiscing elit<br>Sed do eiusmod tempor incididunt</p>
             <p>Lorem ipsum dolor sit amet.<br>Consectetur adipiscing elit<br>Sed do eiusmod tempor incididunt</p>

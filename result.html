@@ -3,11 +3,14 @@
     <head lang="en">
         <meta charset="UTF-8">
         <title>Exercise - Results page</title>
+        <meta name="description" content="The page sample as part of HTML/CSS learning">
+        <meta name="keywords" content="sample page html css learning">
+        <meta name="author" content="turqu">
         <link href="styles.css" type="text/css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     </head>
     <body>
-        <header>
+        <header class="background-primary">
             <nav id="logo-nav">
                 <div id="logo">
                     <i class="fas fa-utensils"></i>
@@ -23,31 +26,31 @@
             </nav>
         </header>
         <section id="results">
-            <h2>Results</h2>
-            <div id="recipies">
+            <h2 class="background-quaternary">Results</h2>
+            <div id="recipies-list" class="background-primary">
                 <div class="recipe">
-                    <img class="img-recipe" src="images/result1.jpg"> 
-                    <h3 class="btn btn-article">Recipe 1</h3>
+                    <img class="img-recipe" src="images/result1.jpg" alt=""> 
+                    <h4 class="btn btn-article">Recipe 1</h3>
                 </div>
                 <div class="recipe">
-                    <img class="img-recipe" src="images/result2.jpg"> 
-                    <h3 class="btn btn-article">Recipe 2</h3>
+                    <img class="img-recipe" src="images/result2.jpg" alt=""> 
+                    <h4 class="btn btn-article">Recipe 2</h3>
                 </div>
                 <div class="recipe">
-                    <img class="img-recipe" src="images/result3.jpg"> 
-                    <h3 class="btn btn-article">Recipe 3</h3>
+                    <img class="img-recipe" src="images/result3.jpg" alt=""> 
+                    <h4 class="btn btn-article">Recipe 3</h3>
                 </div>
                 <div class="recipe">
-                    <img class="img-recipe" src="images/result4.jpg"> 
-                    <h3 class="btn btn-article">Recipe 4</h3>
+                    <img class="img-recipe" src="images/result4.jpg" alt=""> 
+                    <h4 class="btn btn-article">Recipe 4</h3>
                 </div>
             </div>
-            <div id="search-again">
+            <div id="search-again" class="background-quinary">
                 <h3>Not exacly what you want?</h3>
                 <div class="btn btn-article"><a href="search.html">Change ingredients</a></div>
             </div>
         </section>
-        <footer>
+        <footer class="background-senary">
             <p>This is only an exercise</p>
             <p>Lorem ipsum dolor sit amet.<br>Consectetur adipiscing elit<br>Sed do eiusmod tempor incididunt</p>
             <p>Lorem ipsum dolor sit amet.<br>Consectetur adipiscing elit<br>Sed do eiusmod tempor incididunt</p>
