@@ -104,7 +104,7 @@ p {
 .btn-article {
     display: inline-block;
     background-color: #339907;
-    margin: 40px;
+    margin: 40px auto;
 }
 
 .btn-article:hover { background-color: #6D190B; }
@@ -120,7 +120,7 @@ p {
 
 
 /* Header/Navigation style for each site; designed for devices smaller than 768px */
-  
+
 #logo-nav {
     margin: auto;
     padding: 20px 80px;
@@ -133,11 +133,12 @@ p {
 
 .fa-utensils {
     font-size: 5em;
-    padding: 0 20px 0 40px;
+    padding: 0 20px;
 }
 
 #logo h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
+    padding: 20px 0;
 }
 
 header ul { padding: 20px; }
@@ -174,6 +175,11 @@ header ul { padding: 20px; }
 }
 
 @media only screen and (min-width: 1350px) { /* For devices with min. width 1350px */
+    header {
+        max-width: 96.875em; /* 1550px */
+        margin: auto;
+    }
+    
     #logo-nav {
         /* Flexbox prefixes */
         display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -191,6 +197,7 @@ header ul { padding: 20px; }
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
+        padding: 20px 50px;
     }
 
     #logo h1 { float: right; } 
@@ -209,7 +216,7 @@ header ul { padding: 20px; }
     padding: 60px;
 }
 
-#headline img { /* headline image in the background with opacity */
+#headline img { /* the first solution of the overlayed image in the background */
     opacity: 0.35;
     position: absolute;
     top: -9999px;
@@ -233,6 +240,11 @@ header ul { padding: 20px; }
     #headline { padding: 80px; }
 
     #headline img { width: 120%; }
+
+    #foreground-headline p {
+        max-width: 50em; /* 1440px */
+        margin: 0 auto;
+    }
 }
 
 @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) { /* For IE 10+ */
@@ -265,7 +277,10 @@ article {
     padding-bottom: 20px;
 }
 
-.article-content { margin: 20px; }
+.article-content { 
+    margin: 20px;
+    padding: 10px;
+}
 
 article h2 {
     background: none;
@@ -328,6 +343,7 @@ article p { padding: 10px 20px 20px; }
         -ms-flex-pack: distribute;
         justify-content: space-around;
         margin: auto;
+        max-width: 96.875em; /* 1550px */
     }
 
     .article-content { margin: 30px; }
@@ -358,6 +374,7 @@ article p { padding: 10px 20px 20px; }
 }
   
 #option-bar li {
+    font-size: 1.3em;
     background-color: #D9DAC9;
     color: #6D190B;
     padding: 20px 0;
@@ -365,7 +382,10 @@ article p { padding: 10px 20px 20px; }
 
 input[type=checkbox] { margin: 0 10px; }
 
-input[type=submit] { margin: 0; }
+input[type=submit] { 
+    font-size: 1em;
+    margin: 0;
+ }
   
 #products { 
     width: 100%;
@@ -415,14 +435,13 @@ input[type=submit] { margin: 0; }
     padding: 0;
 }
 
-.img-item img {
+.img-item img { /* the second solution of the overlayed image in the background */
     display: inline-block;
     opacity: 0.55;
     position: absolute;
-    top: -9999px;
-    bottom: -9999px;
-    left: -9999px;
-    right: -9999px;
+    top: 0;
+    left: 0;
+    height: 150%;
     margin: auto;
 }
 
@@ -439,7 +458,7 @@ input[type=submit] { margin: 0; }
 }
 
 #search-result {
-    font-size: 1.5em;
+    font-size: 1.3em;
     padding-bottom: 40px;
 }
 
@@ -490,11 +509,17 @@ input[type=submit] { margin: 0; }
         -webkit-flex: 1 0 auto;
         -ms-flex: 1 0 auto;
         flex: 1 0 auto;
+        margin: auto;
+        justify-content: center;
     }
 
     #option-bar ul { display: block; }
 
-    #products { padding: 20px 10px 30px; }
+    #products { 
+        max-width: 86.250em; /* 1380px */
+        margin: auto 5%;
+        padding: 20px 10px 30px;
+    }
 
     #items [id*='item'] {
         min-width: 280px;
@@ -555,6 +580,8 @@ input[type=submit] { margin: 0; }
     -ms-flex-pack: distribute;
     justify-content: space-around;
     padding: 30px 40px;
+    max-width: 96.875em; /* 1550px */
+    margin: auto;
 }
 
 .recipe {
@@ -571,7 +598,7 @@ input[type=submit] { margin: 0; }
 }
 
 .img-recipe { 
-    max-height: 9.375em; /* 150px */
+    max-width: 9.375em; /* 150px */
     padding: 30px;
 }
 
@@ -595,9 +622,7 @@ footer {
     color: #D9DAC9;
 }
 
-footer p {
-    padding: 20px;
-}
+footer p { padding: 20px; }
 
 @media only screen and (min-width: 768px) /* For devices with min. width 768px */ {
     footer {
